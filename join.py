@@ -11,8 +11,8 @@ def get_join_parameters(join_kwargs):
     """
 
     by = join_kwargs.get('by', None)
-    suffixes = join_kwargs.get('suffixes', ('_x', '_y'))
-    indicator = join_kwargs.get('indicator', False)
+    suffixes = join_kwargs.get('suf', ('_x', '_y'))
+    indicator = join_kwargs.get('ind', False)
     if by is None:
         left_on, right_on = None, None
     else:
