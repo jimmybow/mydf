@@ -3,33 +3,25 @@ from .base import *
 
 
 @dfpipe
-def mutate(df, where = None, **kwargs):
+def mutate(df, **kwargs):
     """
     Creates new variables (columns) in the DataFrame specified by keyword
     argument pairs, where the key is the column name and the value is the
     new column value(s).
-
     Args:
         df (pandas.DataFrame): data passed in through the pipe.
-        where : condition.
     Kwargs:
         **kwargs: keys are the names of the new columns, values indicate
             what the new column values will be.
-
     Example:
         diamonds >> mutate(x_plus_y=X.x + X.y) >> select_from('x') >> head(3)
-
               x     y     z  x_plus_y
         0  3.95  3.98  2.43      7.93
         1  3.89  3.84  2.31      7.73
         2  4.05  4.07  2.31      8.12
     """
-    if where is None: return df.assign(**kwargs)
-    else: 
-        added_col = [i for i in kwargs if i not in df.columns]
-        for i in added_col: df[i] = np.nan
-        df[where] = df[where].assign(**kwargs)  
-        return df
+
+    return df.assign(**kwargs)
 
 
 @dfpipe
