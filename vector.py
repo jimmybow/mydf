@@ -114,13 +114,19 @@ def coalesce(*series):
 # case_when
 # ------------------------------------------------------------------------------
 
+@make_symbolic
 def case_when(*args):
     L = len(args)
-    if isinstance(args[L-1], list): tmp = np.nan
-    else: tmp = args[L-1]
-    for i in np.arange(len(args) , 1, -1) -2 :
+    if isinstance(args[L-1], list): 
+        tmp = np.nan
+        L_for_loop = L-1
+    else: 
+        tmp = args[L-1]
+        L_for_loop = L-2
+    for i in np.arange(L_for_loop , -1, -1) :
         tmp = np.where(args[i][0], args[i][1], tmp)
     return tmp
+
 
 # ------------------------------------------------------------------------------
 # if_else
