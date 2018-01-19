@@ -194,3 +194,7 @@ def sd(series):
 @make_symbolic
 def Len(series):
     return len(series)        
+
+@make_symbolic
+def to_df(series, index=None, columns = None, dtype = None, copy = None):    
+    return pd.DataFrame(series, index=index, columns = columns, dtype = dtype, copy = copy)  
