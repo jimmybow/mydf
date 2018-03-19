@@ -200,9 +200,17 @@ def to_df(series, index=None, columns = None, dtype = None, copy = None):
     return pd.DataFrame(series, index=index, columns = columns, dtype = dtype, copy = copy)  
 
 @make_symbolic
+def to_list(series):
+    return list(series)    
+
+@make_symbolic
 def where(series, *args):
     if len(args) > 0:
         return np.where(series, args[0], args[1])
     else:
         return np.where(series)[0]
   
+@make_symbolic
+def Join(series, *args):
+    return args[0].join(series)     
+    
