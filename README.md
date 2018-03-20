@@ -1,6 +1,6 @@
 # mydf
 
-An improved version for [`dfply`](https://github.com/kieferk/dfply).
+An Extended version for [`dfply`](https://github.com/kieferk/dfply).
 
 ### Extended functions:
 - [Summarization](#)
