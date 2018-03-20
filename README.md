@@ -3,11 +3,11 @@
 An extended version for [`dfply`](https://github.com/kieferk/dfply).
 
 ### Extended functions:
-- [Summarization](#)
+- Summarization
   - [r](#)
-- [Reshape](#)
+- Reshape
   - [expand](#)
-- [Embedded column functions](#)
+- Embedded column functions
   - [Len](#)
   - [to_df](#)
   - [to_list](#)
