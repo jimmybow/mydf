@@ -10,6 +10,8 @@ An improved version for [`dfply`](https://github.com/kieferk/dfply).
   - [to_list](#selection-filter-functions)
   - [where]
   - [Join]
+- [Summarization]
+  - [r]
 - [Subsetting and filtering](#subsetting-and-filtering)
   - [`row_slice()`](#row_slice)
   - [`sample()`](#sample)
