@@ -5,7 +5,7 @@ An extended version for [`dfply`](https://github.com/kieferk/dfply).
 ### Extended functions:
 - [Summarization](#)
   - [r](#)
-- [reshape](#)
+- [Reshape](#)
   - [expand](#)
 - [Embedded column functions](#)
   - [Len](#)
