@@ -182,11 +182,3 @@ def na_if(series, *values):
     series = pd.Series(series)
     series[series.isin(values)] = np.nan
     return series
-    
-# ------------------------------------------------------------------------------
-# Len
-# ------------------------------------------------------------------------------
-
-@make_symbolic
-def Len(series):
-    return len(series)
