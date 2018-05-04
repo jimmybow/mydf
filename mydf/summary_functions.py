@@ -207,8 +207,10 @@ def to_list(series):
 def where(series, *args):
     if len(args) > 0:
         return np.where(series, args[0], args[1])
-    else:
+    elif len(np.array(series).shape) == 1:
         return np.where(series)[0]
+    else:
+        return np.where(series)
   
 @make_symbolic
 def Join(series, *args):
