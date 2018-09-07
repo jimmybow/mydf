@@ -10,17 +10,13 @@ import re
 def arrange(df, *args, **kwargs):
     """Calls `pandas.DataFrame.sort_values` to sort a DataFrame according to
     criteria.
-
     See:
     http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html
-
     For a list of specific keyword arguments for sort_values (which will be
     the same in arrange).
-
     Args:
         *args: Symbolic, string, integer or lists of those types indicating
             columns to sort the DataFrame by.
-
     Kwargs:
         **kwargs: Any keyword arguments will be passed through to the pandas
             `DataFrame.sort_values` function.
@@ -32,10 +28,9 @@ def arrange(df, *args, **kwargs):
               df.iloc[:, arg] if isinstance(arg, int) else
               pd.Series(arg) for arg in flat_args]
 
-    sorter = pd.concat(series, axis=1)
-    sorter.index = df.index
+    sorter = pd.concat(series, axis=1).reset_index(drop=True)
     sorter = sorter.sort_values(sorter.columns.tolist(), **kwargs)
-    return df.loc[sorter.index, :]
+    return df.iloc[sorter.index, :]
 
 
 # ------------------------------------------------------------------------------
