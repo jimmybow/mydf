@@ -10,3 +10,4 @@ from .transform import *
 from .summary_functions import *
 from .window_functions import *
 from .vector import *
+from .other import *
